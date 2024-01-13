@@ -1,0 +1,81 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link rel="stylesheet" href="whatsapp.css">
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  // Create the main div with id="qlwapp"
+  var qlwappDiv = document.createElement("div");
+  qlwappDiv.id = "qlwapp";
+
+  // Create the container div with class="qlwapp-container"
+  var containerDiv = document.createElement("div");
+  containerDiv.className = "qlwapp-container";
+
+  // Create the anchor tag with class="qlwapp-toggle"
+  var anchorTag = document.createElement("a");
+  anchorTag.className = "qlwapp-toggle";
+  anchorTag.href = "https://wa.me/1234567890?text=Hi there, I have visited your website and i have a question about .";
+  anchorTag.target = "_blank";
+  anchorTag.role = "button";
+  anchorTag.tabIndex = "0";
+
+  // Create the span with class="qlwapp-text"
+  var textSpan = document.createElement("span");
+  textSpan.className = "qlwapp-text";
+  textSpan.style.marginLeft = "5px";
+  textSpan.style.fontSize = "14px";
+  textSpan.textContent = "Let's chat.";
+
+  // Create the WhatsApp icon
+  var whatsappIcon = document.createElement("i");
+  whatsappIcon.className = "fab fa-whatsapp";
+  whatsappIcon.style.fontSize = "30px";
+  whatsappIcon.style.marginRight = "10px";
+  whatsappIcon.style.transition = "transform 0.3s ease-in-out";
+
+  // Create the close icon
+  var closeIcon = document.createElement("i");
+  closeIcon.className = "qlwapp-close";
+  closeIcon.style.fontSize = "16px";
+  closeIcon.style.cursor = "pointer";
+
+  // Append elements to construct the HTML structure
+  anchorTag.appendChild(textSpan);
+  anchorTag.appendChild(whatsappIcon);
+  anchorTag.appendChild(closeIcon);
+  containerDiv.appendChild(anchorTag);
+  qlwappDiv.appendChild(containerDiv);
+
+  // Find the footer element and insert the WhatsApp button before it
+  var footerElement = document.querySelector("footer");
+  if (footerElement) {
+    footerElement.parentNode.insertBefore(qlwappDiv, footerElement);
+  } else {
+    // If no footer is found, append to the body
+    document.body.appendChild(qlwappDiv);
+  }
+
+  // Add media query for small screens
+  var mediaQuery = window.matchMedia("(max-width: 600px)");
+  handleMediaQuery(mediaQuery); // Initial check
+  mediaQuery.addListener(handleMediaQuery); // Listen for changes
+
+  function handleMediaQuery(mq) {
+    if (mq.matches) {
+      // Apply styles for small screens
+      containerDiv.style.borderRadius = "50%";
+      containerDiv.style.width = "40px";
+      containerDiv.style.height = "39px";
+      containerDiv.style.textAlign = "center";
+      textSpan.style.display = "none";
+    } else {
+      // Reset styles for larger screens
+      containerDiv.style.borderRadius = "0";
+      containerDiv.style.width = "auto";
+      containerDiv.style.height = "auto";
+      containerDiv.style.textAlign = "left";
+      textSpan.style.display = "inline";
+    }
+  }
+});
+</script>
