@@ -41,7 +41,7 @@ This project is licensed under the MIT License - see the [LICENSE] file for deta
 
 ## Acknowledgments
 
-- WhatsApp icon: [WhatsApp Brand Resources](https://fontawesome.com/))
+- WhatsApp icon: [WhatsApp Brand Resources](https://fontawesome.com/icons/whatsapp?f=brands&s=solid)
 
 Feel free to contribute or report issues. Happy coding!
 
