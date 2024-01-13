@@ -1,10 +1,9 @@
-
 #qlwapp {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 40px;
+    right: 40px;
     animation: pulse 1.5s infinite alternate;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.1s ease-in-out;
 }
 
 #qlwapp:hover {
@@ -14,17 +13,16 @@
 .qlwapp-container {
     background-color: #28D146;
     color: #FFFFFF !important;
-    padding: 10px;
-    border-radius: 10px;
+    padding: 10px !important;
+    border-radius: 0px !important;
     font-family: 'Maiandra GD', sans-serif !important;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease-in-out;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 1);
+    transition: background-color 0.1s ease-in-out;
     animation: pulse 1.5s infinite alternate;
 }
 
 .qlwapp-container:hover {
     background-color: #28D146 !important;
-    border-bottom: none !important;
     animation: none !important; /* Stop the animation on hover */
 }
 
@@ -33,13 +31,12 @@
     color: #FFFFFF !important;
     display: flex;
     align-items: center;
-    transition: color 0.3s ease-in-out;
+    transition: color 0.1s ease-in-out;
 }
 
 .qlwapp-toggle:hover {
     transform: scale(1.2);
     color: #000000 !important; /* Specify the color for text on hover */
-    border-bottom: none !important;
 }
 
 .qlwapp-toggle:hover .fab {
@@ -48,9 +45,13 @@
 }
 
 .fab {
-    font-size: 30px!important;
+    font-size: 30px!important; /* Adjusted font size */
     margin-left: 5px!important;
-    transition: color 0.3s ease-in-out; 
+    transition: color 0.1s ease-in-out; 
+}
+
+.qlwapp-close {
+    /* Add your styles for the close icon if needed */
 }
 
 @keyframes pulse {
@@ -61,3 +62,22 @@
         transform: scale(1.1);
     }
 }
+
+
+@media only screen and (max-width: 600px) {
+    /* Make everything smaller on small screens */
+    #qlwapp {
+        bottom: 10px;
+        right: 15px;
+    }
+
+    .qlwapp-container {
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    .fab {
+        font-size: 25px!important; /* Adjusted font size for small screens */
+    }
+    
+
